@@ -1,0 +1,41 @@
+Ubuntu-1
+
+gns3@box:~$ sudo ifconfig eth0 10.10.10.2 netmask 255.255.255.0
+gns3@box:~$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:FB:D7:EE:A1:00
+          inet addr:10.10.10.2  Bcast:10.10.10.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:8 errors:1053 dropped:0 overruns:0 frame:1053
+          TX packets:4 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:1328 (1.2 KiB)  TX bytes:1086 (1.0 KiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+gns3@box:~$ sudo route add default gw 10.10.10.1 eth0
+gns3@box:~$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:FB:D7:EE:A1:00
+          inet addr:10.10.10.2  Bcast:10.10.10.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:8 errors:1078 dropped:0 overruns:0 frame:1078
+          TX packets:4 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:1328 (1.2 KiB)  TX bytes:1086 (1.0 KiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+gns3@box:~$
+
+
